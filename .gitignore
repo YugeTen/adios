@@ -1,0 +1,8 @@
+*__pycache__*
+wandb/*
+*trained_models*
+*pt
+*.pkl
+*wandb*
+auto_mask/*
+.idea*

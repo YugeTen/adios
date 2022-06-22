@@ -1,0 +1,33 @@
+python main_pretrain.py \
+    --alpha_entropy 0. \
+    --alpha_sparsity 0.9517975576926448 \
+    --batch_size 128 \
+    --classifier_lr 0.1 \
+    --dataset imagenet100s \
+    --lr 0.21411127909038455 \
+    --mask_lr 0.32636188418935613 \
+    --max_epochs 300 \
+    --optimizer sgd \
+    --scheduler warmup_cosine \
+    --weight_decay 1e-05 \
+    --brightness 0.4 \
+    --contrast 0.4 \
+    --hue 0.1 \
+    --saturation 0.2 \
+    --N 6 \
+    --encoder vit_tiny \
+    --mask_fbase 8 \
+    --method byol_adios \
+    --output_dim 256 \
+    --pred_hidden_dim 8192 \
+    --proj_hidden_dim 4096 \
+    --unet_norm gn \
+    --gpus 0 \
+    --data_dir /datasets/yshi \
+    --wandb_dir /datasets/yshi/adios \
+    --checkpoint_dir /datasets/yshi/adios/trained_models \
+    --project adios \
+    --entity yugeten \
+    --name byol_adios_vit_imagenet100s \
+    --wandb True
+# note: replace --data_dir, --wandb_dir, --checkpoint_dir, --project, --entity, --name with your custom values.

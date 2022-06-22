@@ -1,0 +1,37 @@
+python main_pretrain.py \
+    --alpha_entropy 0 \
+    --alpha_sparsity 0.5 \
+    --batch_size 128 \
+    --classifier_lr 0.1 \
+    --dataset imagenet100 \
+    --lr 0.5424648008289498 \
+    --mask_lr 0.4846424666121607 \
+    --optimizer sgd \
+    --scheduler warmup_cosine \
+    --use_both_mask true \
+    --use_no_mask true \
+    --use_symmetry_mask true \
+    --weight_decay 1e-05 \
+    --max_epochs 400 \
+    --brightness 0.4 \
+    --contrast 0.4 \
+    --hue 0.1 \
+    --saturation 0.4 \
+    --N 4 \
+    --method simsiam_adios_s \
+    --mask_fbase 32 \
+    --encoder resnet18 \
+    --output_dim 2048 \
+    --pred_hidden_dim 512 \
+    --proj_hidden_dim 2048 \
+    --unet_norm gn \
+    --num_blocks 4 \
+    --gpus 0 \
+    --data_dir /datasets/yshi \
+    --wandb_dir /datasets/yshi/adios \
+    --checkpoint_dir /datasets/yshi/adios/trained_models \
+    --project adios \
+    --entity yugeten \
+    --name simsiam_adios_s_resnet18_imagenet100 \
+    --wandb True
+# note: replace --data_dir, --wandb_dir, --checkpoint_dir, --project, --entity, --name with your custom values.

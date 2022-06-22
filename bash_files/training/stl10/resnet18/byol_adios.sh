@@ -1,0 +1,29 @@
+python main_pretrain.py \
+    --alpha_entropy 0. \
+    --alpha_sparsity 1.7193143216139353 \
+    --batch_size 128 \
+    --classifier_lr 0.1 \
+    --lr 0.2920279558260822 \
+    --mask_lr 0.09281403683825379 \
+    --weight_decay 9.912019840903654e-06 \
+    --scheduler warmup_cosine \
+    --optimizer sgd \
+    --max_epochs 400 \
+    --dataset stl10 \
+    --N 6 \
+    --encoder resnet18 \
+    --mask_fbase 64 \
+    --method byol_adios \
+    --output_dim 256 \
+    --pred_hidden_dim 8192 \
+    --proj_hidden_dim 4096 \
+    --unet_norm "gn" \
+    --gpus 0 \
+    --data_dir /datasets/yshi \
+    --wandb_dir /datasets/yshi/adios \
+    --checkpoint_dir /datasets/yshi/adios/trained_models \
+    --project adios \
+    --entity yugeten \
+    --name byol_adios_resnet18_stl10 \
+    --wandb True
+# note: replace --data_dir, --wandb_dir, --checkpoint_dir, --project, --entity, --name with your custom values.

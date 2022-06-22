@@ -1,0 +1,91 @@
+program: main_pretrain.py
+method: bayes
+metric:
+  name: val_acc1
+  goal: maximize
+name: byol_adios
+description: example sweep 
+project: imagenet100
+entity: yugeten # replace with your own wandb entity (username)
+parameters:
+  alpha_sparsity:
+    values: [0.25, 0.5, 0.75, 1.]
+  mask_lr:
+    min: 0.01
+    max: 1.0
+  lr:
+    min: 0.01
+    max: 1.0
+  optimizer:
+    values: ["sgd", "adam"]
+  weight_decay:
+    values: [0, 0.00001, 0.0001]
+  data_dir:
+    value: "/datasets/yshi/"
+  max_epochs:
+    value: 400
+  precision:
+    value: 16
+  lars:
+    value: True
+  grad_clip_lars:
+    value: True
+  eta_lars:
+    value: 0.02
+  exclude_bias_n_norm:
+    value: True
+  scheduler:
+    value: warmup_cosine
+  classifier_lr:
+    value: 0.1
+  batch_size:
+    value: 128
+  num_workers:
+    value: 4
+  brightness:
+    values: [0.2, 0.3, 0.4, 0.5, 0.6]
+  contrast:
+    values: [0.2, 0.3, 0.4, 0.5, 0.6]
+  saturation:
+    values: [0.1, 0.15, 0.2, 0.25, 0.3]
+  hue:
+    values: [0.05, 0.1, 0.15, 0.2]
+  proj_hidden_dim:
+    value: 4096
+  pred_hidden_dim:
+    value: 8192
+  output_dim:
+    value: 256
+  wandb:
+    value: True
+  gpus:
+    value: 1
+  auto_mask:
+    value: True
+  method:
+    value: "byol_adios"
+  encoder:
+    value: "resnet18"
+  mask_fbase:
+    values: [8, 16, 32]
+  unet_norm:
+    value: 'gn'
+  N:
+    values: [4, 6, 8]
+  checkpoint_dir:
+    value: "/datasets/yshi/adios/trained_models"
+  auto_mask_dir:
+    value: "/datasets/yshi/adios/auto_mask"
+  wandb_dir:
+    value: "/datasets/yshi/adios"
+  dataset:
+    value: "imagenet100"
+  accelerator:
+    value: "gpu"
+  sync_batchnorm:
+    value: True
+  base_tau_momentum:
+    value: 0.99
+  accumulate_grad_batches:
+    value: 1
+

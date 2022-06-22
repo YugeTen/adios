@@ -1,0 +1,33 @@
+python main_pretrain.py \
+    --alpha_entropy 0.711773255433044 \
+    --alpha_sparsity 0.9229467944410698 \
+    --batch_size 128 \
+    --classifier_lr 0.1 \
+    --mask_lr 0.014515024186652984 \
+    --weight_decay 0.0001 \
+    --max_epochs 500 \
+    --dataset imagenet100s \
+    --scheduler warmup_cosine \
+    --lr 0.11127702230184772 \
+    --optimizer sgd \
+    --temperature 0.2 \
+    --brightness 0.8 \
+    --contrast 0.8 \
+    --hue 0.2 \
+    --saturation 0.8 \
+    --N 4 \
+    --encoder resnet18 \
+    --mask_fbase 32 \
+    --method simclr_adios \
+    --output_dim 128 \
+    --proj_hidden_dim 2048 \
+    --unet_norm "in" \
+    --gpus 0 \
+    --data_dir /datasets/yshi \
+    --wandb_dir /datasets/yshi/adios \
+    --checkpoint_dir /datasets/yshi/adios/trained_models \
+    --project adios \
+    --entity yugeten \
+    --name simclr_adios_resnet18_imagenet100s \
+    --wandb True
+# note: replace --data_dir, --wandb_dir, --checkpoint_dir, --project, --entity, --name with your custom values.

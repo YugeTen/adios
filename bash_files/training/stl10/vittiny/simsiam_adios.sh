@@ -1,0 +1,36 @@
+python main_pretrain.py \
+    --alpha_entropy 0 \
+    --alpha_sparsity 0.8581936366173779 \
+    --batch_size 128 \
+    --dataset stl10 \
+    --lr 0.2917762337709393 \
+    --mask_lr 0.0931682474492948 \
+    --max_epochs 200 \
+    --optimizer sgd \
+    --scheduler warmup_cosine \
+    --use_both_mask false \
+    --use_no_mask false \
+    --use_symmetry_mask true \
+    --weight_decay 1e-05 \
+    --brightness 0.4 \
+    --contrast 0.4 \
+    --hue 0.1 \
+    --saturation 0.4 \
+    --N 6 \
+    --encoder vit_tiny \
+    --mask_fbase 16 \
+    --method simsiam_adios \
+    --output_dim 2048 \
+    --pred_hidden_dim 512 \
+    --proj_hidden_dim 2048 \
+    --unet_norm gn \
+    --num_blocks 4 \
+    --gpus 0 \
+    --data_dir /datasets/yshi \
+    --wandb_dir /datasets/yshi/adios \
+    --checkpoint_dir /datasets/yshi/adios/trained_models \
+    --project adios \
+    --entity yugeten \
+    --name simsiam_adios_vit_stl10 \
+    --wandb True
+# note: replace --data_dir, --wandb_dir, --checkpoint_dir, --project, --entity, --name with your custom values.
